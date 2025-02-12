@@ -1,26 +1,36 @@
 import flet as ft
+from flet import (
+    Page, app,
+    Container,
+    Column, Row,
+    Image,
+    Text, TextStyle,
+    MainAxisAlignment,
+    CrossAxisAlignment,
+)
 
+from pathlib import Path
+assets = f"{Path(__file__).parent}/src/assets"
 
-def main(page: ft.Page):
-    counter = ft.Text("0", size=50, data=0)
+def main(page: Page) -> None:
+    page.title = "Portfolio"
+    # page.padding = 0
 
-    def increment_click(e):
-        counter.data += 1
-        counter.value = str(counter.data)
-        counter.update()
-
-    page.floating_action_button = ft.FloatingActionButton(
-        icon=ft.Icons.ADD, on_click=increment_click
-    )
     page.add(
-        ft.SafeArea(
-            ft.Container(
-                counter,
-                alignment=ft.alignment.center,
-            ),
-            expand=True,
+        Container(
+            height=400,
+            width=300,
+            bgcolor="grey200"
+        ),
+        Text(
+            value="Portfolio",
+            weight=ft.FontWeight.BOLD,
+            size=120
         )
     )
+    page.update()
 
 
-ft.app(main)
+# Run app
+if __name__ == '__main__':
+    app(target=main, assets_dir=assets)
