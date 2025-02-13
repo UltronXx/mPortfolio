@@ -129,7 +129,7 @@ class ContentBody(Column):
                                                                     text_align=ft.TextAlign.CENTER,
                                                                     weight=FontWeight.W_700,
                                                                     size=30, color=white,
-                                                                    style=TextStyle(letter_spacing=-1)
+                                                                    style=TextStyle(letter_spacing=-0.5)
                                                                 ),
                                                                 Text(
                                                                     value="A minimalist approach to\n"
