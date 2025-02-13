@@ -55,21 +55,21 @@ class ContentBody(Column):
     def __init__(self):
         super().__init__()
 
-        #self.horizontal_alignment = CrossAxisAlignment.CENTER
         self.width = 780
 
         self.controls = [
             Container(
-                bgcolor="green",
+                # bgcolor="green",
                 content=Column(
                     expand=True,
                     controls=[
                         Column(height=50),
                         # Hero Section
                         Container(
-                            bgcolor="blue",
+                            bgcolor=white,
                             height=480,
                             alignment=ft.alignment.center,
+                            border_radius=30,
                             content=Column(
                                 alignment=MainAxisAlignment.CENTER,
                                 horizontal_alignment=CrossAxisAlignment.CENTER,
@@ -77,15 +77,15 @@ class ContentBody(Column):
                                     Text(
                                         value="Site Under\nConstruction",
                                         weight=FontWeight.W_800,
-                                        size=70, text_align=ft.TextAlign.CENTER,
+                                        size=70, color=black,
+                                        text_align=ft.TextAlign.CENTER,
                                         style=TextStyle(letter_spacing=-3, height=1),
                                     ),
                                     Column(height=10),
                                     Text(
                                         value="Your patience,\nis everything we need.",
-                                        color=black,
                                         weight=FontWeight.W_500,
-                                        size=15,
+                                        size=15, color=black,
                                         style=TextStyle(letter_spacing=-0.3, height=1.2),
                                         text_align=ft.TextAlign.CENTER
                                     ),
@@ -97,20 +97,27 @@ class ContentBody(Column):
                             horizontal_alignment=CrossAxisAlignment.CENTER,
                             controls=[
                                 # Space
-                                Column(height=80),
-                                Text(value="Header here"),
+                                Column(height=90),
+                                Text(
+                                    value="Building for you",
+                                    weight=FontWeight.W_600,
+                                    size=30, color=black,
+                                    style=TextStyle(letter_spacing=-0.6),
+                                ),
+                                Column(height=20),
                                 Row(
                                     vertical_alignment=CrossAxisAlignment.START,
-                                    height=300,
+                                    height=350,
                                     controls=[
                                         Container(
                                             expand=True,
-                                            bgcolor="pink",
+                                            # bgcolor="pink",
                                             content=Column(
                                                 alignment=MainAxisAlignment.SPACE_BETWEEN,
                                                 controls=[
                                                     Container(
-                                                        bgcolor="blue",
+                                                        bgcolor=black,
+                                                        border_radius=20,
                                                         alignment=ft.alignment.center,
                                                         expand=True,
                                                         content=Column(
@@ -121,14 +128,15 @@ class ContentBody(Column):
                                                                     value="Less Is More",
                                                                     text_align=ft.TextAlign.CENTER,
                                                                     weight=FontWeight.W_700,
-                                                                    size=30,
+                                                                    size=30, color=white,
                                                                     style=TextStyle(letter_spacing=-1)
                                                                 ),
                                                                 Text(
                                                                     value="A minimalist approach to\n"
-                                                                     "everything you do.",
+                                                                          "everything you do.",
+                                                                    color=white,
                                                                     text_align=ft.TextAlign.CENTER,
-                                                                    weight=FontWeight.W_500,
+                                                                    weight=FontWeight.W_400,
                                                                     style=TextStyle(letter_spacing=-0.4)
                                                                 ),
                                                             ]
@@ -136,10 +144,14 @@ class ContentBody(Column):
                                                     ),
                                                     Container(
                                                         alignment=ft.alignment.center,
-                                                        bgcolor="brown",
+                                                        bgcolor=white,
+                                                        border_radius=20,
                                                         padding=ft.padding.only(top=40, bottom=40),
                                                         content=Text(
-                                                            value="Just for you"
+                                                            value="Just for you",
+                                                            weight=FontWeight.W_700,
+                                                            size=20, color=black,
+                                                            style=TextStyle(letter_spacing=-0.5),
                                                         )
                                                     )
                                                 ]
@@ -147,10 +159,11 @@ class ContentBody(Column):
                                         ),
                                         Container(
                                             expand=True,
+                                            border_radius=20,
                                             gradient=ft.LinearGradient(
                                                 begin=ft.alignment.top_left,
                                                 end=ft.alignment.bottom_right,
-                                                colors=["blue", "green"]
+                                                colors=[white_grey, white_mid]
                                             ),
                                             content=Image(src="imgs/phone.png")
                                         )
@@ -163,12 +176,18 @@ class ContentBody(Column):
                             horizontal_alignment=CrossAxisAlignment.CENTER,
                             controls=[
                                 # Space
-                                Column(height=80),
-                                Text(value="See Our next moves"),
+                                Column(height=90),
+                                Text(
+                                    value="See Our next moves",
+                                    weight=FontWeight.W_600,
+                                    size=30, color=black,
+                                    style=TextStyle(letter_spacing=-0.6),
+                                ),
+                                Column(height=20),
                                 Container(
                                     height=400,
-                                    bgcolor="blue",
-                                    #alignment=ft.alignment.center,
+                                    bgcolor=black,
+                                    border_radius=30,
                                     content=Row(
                                         alignment=MainAxisAlignment.CENTER,
                                         spacing=40,
@@ -177,8 +196,24 @@ class ContentBody(Column):
                                                 alignment=MainAxisAlignment.CENTER,
                                                 horizontal_alignment=CrossAxisAlignment.CENTER,
                                                 controls=[
-                                                    Text(value="Get In Touch"),
-                                                    Text(value="Let's cross Paths"),
+                                                    Column(
+                                                        horizontal_alignment=CrossAxisAlignment.CENTER,
+                                                        spacing=5,
+                                                        controls=[
+                                                            Text(
+                                                                value="Get In Touch",
+                                                                weight=FontWeight.W_600,
+                                                                size=28, color=cream,
+                                                                style=TextStyle(letter_spacing=-0.5),
+                                                            ),
+                                                            Text(
+                                                                value="Let's cross Paths",
+                                                                weight=FontWeight.W_400,
+                                                                size=15, color=cream,
+                                                                style=TextStyle(letter_spacing=-0.5),
+                                                            ),
+                                                        ]
+                                                    ),
                                                     # Space
                                                     Column(height=6),
                                                     # Social Media links
@@ -187,18 +222,35 @@ class ContentBody(Column):
                                                             Row(
                                                                 controls=[
                                                                     Container(
-                                                                        bgcolor="pink",
+                                                                        bgcolor=cream,
                                                                         alignment=ft.alignment.center,
-                                                                        height=36,
-                                                                        width=120,
-                                                                        content=Text("Pinterest")
+                                                                        height=36, width=120,
+                                                                        border_radius=25,
+                                                                        content=Text(
+                                                                            value="Pinterest",
+                                                                            color=black,
+                                                                            weight=FontWeight.W_400,
+                                                                            style=TextStyle(
+                                                                                letter_spacing=-0.5
+                                                                            )
+                                                                        )
                                                                     ),
                                                                     Container(
-                                                                        bgcolor="brown",
                                                                         alignment=ft.alignment.center,
-                                                                        height=36,
-                                                                        width=120,
-                                                                        content=Text("Instagram")
+                                                                        height=36, width=120,
+                                                                        border_radius=25,
+                                                                        border=ft.border.all(
+                                                                            width=1,
+                                                                            color=cream,
+                                                                        ),
+                                                                        content=Text(
+                                                                            value="Instagram",
+                                                                            color=cream,
+                                                                            weight=FontWeight.W_400,
+                                                                            style=TextStyle(
+                                                                                letter_spacing=-0.5
+                                                                            )
+                                                                        )
                                                                     ),
                                                                 ]
                                                             ),
@@ -207,17 +259,34 @@ class ContentBody(Column):
                                                                     Column(width=20),
                                                                     Container(
                                                                         alignment=ft.alignment.center,
-                                                                        bgcolor="brown",
-                                                                        height=36,
-                                                                        width=120,
-                                                                        content=Text("Email")
+                                                                        height=36, width=120,
+                                                                        border_radius=25,
+                                                                        border=ft.border.all(
+                                                                            width=1,
+                                                                            color=cream,
+                                                                        ),
+                                                                        content=Text(
+                                                                            value="Email",
+                                                                            color=cream,
+                                                                            weight=FontWeight.W_400,
+                                                                            style=TextStyle(
+                                                                                letter_spacing=-0.5
+                                                                            )
+                                                                        )
                                                                     ),
                                                                     Container(
-                                                                        bgcolor="pink",
+                                                                        bgcolor=cream,
                                                                         alignment=ft.alignment.center,
-                                                                        height=36,
-                                                                        width=120,
-                                                                        content=Text("WhatsApp")
+                                                                        height=36, width=120,
+                                                                        border_radius=25,
+                                                                        content=Text(
+                                                                            value="WhatsApp",
+                                                                            color=black,
+                                                                            weight=FontWeight.W_400,
+                                                                            style=TextStyle(
+                                                                                letter_spacing=-0.5
+                                                                            )
+                                                                        )
                                                                     ),
                                                                 ]
                                                             ),
@@ -226,8 +295,12 @@ class ContentBody(Column):
                                                 ]
                                             ),
                                             Container(
-                                                bgcolor="pink",
-                                                content=Image(src="imgs/img_face.png", width=250)
+                                                bgcolor=cream,
+                                                border_radius=20,
+                                                content=Image(
+                                                    src="imgs/img_face.png",
+                                                    width=250
+                                                )
                                             )
                                         ]
                                     )
@@ -241,12 +314,14 @@ class ContentBody(Column):
                                     alignment=ft.alignment.center,
                                     content=Column(
                                         controls=[
-                                            Column(height=80),
+                                            Column(height=100),
                                             Text(
-                                                value="Don't say, \"He is lazy!",
-                                                size=25
+                                                value="Don't say, \"He is lazy!\"",
+                                                weight=FontWeight.W_700,
+                                                size=35, color=black,
+                                                style=TextStyle(letter_spacing=-0.8),
                                             ),
-                                            Column(height=80),
+                                            Column(height=100),
                                         ]
                                     )
                                 )
@@ -264,18 +339,24 @@ class BottomNavBar(Column):
 
         self.controls = [
             Container(
-                bgcolor="blue",
-                height=240,
+                bgcolor=white,
+                height=300,
                 alignment=ft.alignment.center,
                 content=Column(
                     alignment=MainAxisAlignment.CENTER,
                     horizontal_alignment=CrossAxisAlignment.CENTER,
                     controls=[
                         Text(
-                            value="mirage",
-                            size=50
+                            value="mirage", size=60,
+                            weight=FontWeight.W_700,color=black,
+                            style=TextStyle(letter_spacing=-0.8),
                         ),
-                        Text(value="Copyright 2025")
+                        Text(
+                            value="Copyright 2025",
+                            weight=FontWeight.W_600,
+                            size=18, color=black,
+                            style=TextStyle(letter_spacing=-0.6),
+                        )
                     ]
                 )
             )
