@@ -31,12 +31,8 @@ class NavBar(Column):
             self.nav_bar.controls.append(
                 Text(
                     value=f"{nav_bar_link}",
-                    color=black,
-                    size=14,
-                    weight=FontWeight.W_500,
-                    style=TextStyle(
-                        letter_spacing=-0.3
-                    )
+                    color=black, size=14,
+                    font_family="semibold",
                 )
             )
 
@@ -77,17 +73,17 @@ class ContentBody(Column):
                                 controls=[
                                     Text(
                                         value="Site Under\nConstruction",
-                                        weight=FontWeight.W_800,
+                                        font_family="heavy",
                                         size=70, color=black,
                                         text_align=ft.TextAlign.CENTER,
-                                        style=TextStyle(letter_spacing=-3, height=1),
+                                        style=TextStyle(letter_spacing=-1, height=1),
                                     ),
                                     Column(height=10),
                                     Text(
                                         value="Your patience,\nis everything we need.",
-                                        weight=FontWeight.W_500,
+                                        font_family="semibold",
                                         size=15, color=black,
-                                        style=TextStyle(letter_spacing=-0.3, height=1.2),
+                                        style=TextStyle(height=1.2),
                                         text_align=ft.TextAlign.CENTER
                                     ),
                                 ]
@@ -101,9 +97,9 @@ class ContentBody(Column):
                                 Column(height=90),
                                 Text(
                                     value="Building for you",
-                                    weight=FontWeight.W_600,
+                                    font_family="bold",
                                     size=30, color=black,
-                                    style=TextStyle(letter_spacing=-0.6),
+                                    style=TextStyle(letter_spacing=-0.2),
                                 ),
                                 Column(height=20),
                                 Row(
@@ -128,17 +124,15 @@ class ContentBody(Column):
                                                                 Text(
                                                                     value="Less Is More",
                                                                     text_align=ft.TextAlign.CENTER,
-                                                                    weight=FontWeight.W_700,
+                                                                    font_family="bold",
                                                                     size=30, color=white,
-                                                                    style=TextStyle(letter_spacing=-0.5)
                                                                 ),
                                                                 Text(
                                                                     value="A minimalist approach to\n"
                                                                           "everything you do.",
                                                                     color=white,
                                                                     text_align=ft.TextAlign.CENTER,
-                                                                    weight=FontWeight.W_400,
-                                                                    style=TextStyle(letter_spacing=-0.4)
+                                                                    font_family="regular",
                                                                 ),
                                                             ]
                                                         )
@@ -150,9 +144,8 @@ class ContentBody(Column):
                                                         padding=ft.padding.only(top=40, bottom=40),
                                                         content=Text(
                                                             value="Just for you",
-                                                            weight=FontWeight.W_700,
+                                                            font_family="bold",
                                                             size=20, color=black,
-                                                            style=TextStyle(letter_spacing=-0.5),
                                                         )
                                                     )
                                                 ]
@@ -180,9 +173,8 @@ class ContentBody(Column):
                                 Column(height=90),
                                 Text(
                                     value="See Our next moves",
-                                    weight=FontWeight.W_600,
+                                    font_family="bold",
                                     size=30, color=black,
-                                    style=TextStyle(letter_spacing=-0.6),
                                 ),
                                 Column(height=20),
                                 Container(
@@ -203,15 +195,13 @@ class ContentBody(Column):
                                                         controls=[
                                                             Text(
                                                                 value="Get In Touch",
-                                                                weight=FontWeight.W_600,
+                                                                font_family="bold",
                                                                 size=28, color=cream,
-                                                                style=TextStyle(letter_spacing=-0.5),
                                                             ),
                                                             Text(
                                                                 value="Let's cross Paths",
-                                                                weight=FontWeight.W_400,
+                                                                font_family="semibold",
                                                                 size=15, color=cream,
-                                                                style=TextStyle(letter_spacing=-0.5),
                                                             ),
                                                         ]
                                                     ),
@@ -230,10 +220,7 @@ class ContentBody(Column):
                                                                         content=Text(
                                                                             value="Pinterest",
                                                                             color=black,
-                                                                            weight=FontWeight.W_400,
-                                                                            style=TextStyle(
-                                                                                letter_spacing=-0.5
-                                                                            )
+                                                                            font_family="semibold",
                                                                         ),
                                                                         on_click=lambda
                                                                             e: self.social_media_button_clicked(e),
@@ -260,10 +247,7 @@ class ContentBody(Column):
                                                                         content=Text(
                                                                             value="Instagram",
                                                                             color=cream,
-                                                                            weight=FontWeight.W_400,
-                                                                            style=TextStyle(
-                                                                                letter_spacing=-0.5
-                                                                            ),
+                                                                            font_family="semibold",
                                                                         ),
                                                                         on_click=lambda
                                                                             e: self.social_media_button_clicked(e),
@@ -295,10 +279,7 @@ class ContentBody(Column):
                                                                         content=Text(
                                                                             value="Email",
                                                                             color=cream,
-                                                                            weight=FontWeight.W_400,
-                                                                            style=TextStyle(
-                                                                                letter_spacing=-0.5
-                                                                            )
+                                                                            font_family="semibold",
                                                                         ),
                                                                         on_click=lambda
                                                                             e: self.social_media_button_clicked(e),
@@ -322,10 +303,7 @@ class ContentBody(Column):
                                                                         content=Text(
                                                                             value="WhatsApp",
                                                                             color=black,
-                                                                            weight=FontWeight.W_400,
-                                                                            style=TextStyle(
-                                                                                letter_spacing=-0.5
-                                                                            )
+                                                                            font_family="semibold",
                                                                         ),
                                                                         on_click=lambda
                                                                             e: self.social_media_button_clicked(e),
@@ -370,9 +348,8 @@ class ContentBody(Column):
                                             Column(height=100),
                                             Text(
                                                 value="Don't say, \"He is lazy!\"",
-                                                weight=FontWeight.W_700,
-                                                size=35, color=black,
-                                                style=TextStyle(letter_spacing=-0.8),
+                                                size=40, color=black,
+                                                font_family="bold",
                                             ),
                                             Column(height=100),
                                         ]
@@ -417,14 +394,13 @@ class BottomNavBar(Column):
                     controls=[
                         Text(
                             value="mirage", size=60,
-                            weight=FontWeight.W_700,color=black,
-                            style=TextStyle(letter_spacing=-0.8),
+                            color=black,
+                            font_family="bold",
                         ),
                         Text(
                             value="Copyright 2025",
-                            weight=FontWeight.W_600,
                             size=18, color=black,
-                            style=TextStyle(letter_spacing=-0.6),
+                            font_family="semibold",
                         )
                     ]
                 )
@@ -442,6 +418,14 @@ def main(page: Page) -> None:
     page.padding = 0
 
     page.scroll = ft.ScrollMode.HIDDEN
+
+    page.fonts = {
+        "regular": "fonts/SF-Pro-Display-Regular.otf",
+        "medium": "fonts/SF-Pro-Display-Medium.otf",
+        "semibold": "fonts/SF-Pro-Display-Semibold.otf",
+        "bold": "fonts/SF-Pro-Display-Bold.otf",
+        "heavy": "fonts/SF-Pro-Display-Heavy.otf",
+    }
 
     page.add(
         NavBar(),
