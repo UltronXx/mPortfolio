@@ -51,6 +51,7 @@ class NavBar(Column):
         ]
 
 
+
 class ContentBody(Column):
     def __init__(self):
         super().__init__()
@@ -233,7 +234,20 @@ class ContentBody(Column):
                                                                             style=TextStyle(
                                                                                 letter_spacing=-0.5
                                                                             )
-                                                                        )
+                                                                        ),
+                                                                        on_click=lambda
+                                                                            e: self.social_media_button_clicked(e),
+                                                                        on_hover=lambda
+                                                                            e: self.social_media_g2_hover(e),
+                                                                        scale=1,
+                                                                        animate=ft.animation.Animation(
+                                                                            duration=200,
+                                                                            curve=ft.AnimationCurve.EASE_IN
+                                                                        ),
+                                                                        animate_scale=ft.animation.Animation(
+                                                                            duration=200,
+                                                                            curve=ft.AnimationCurve.EASE_IN
+                                                                        ),
                                                                     ),
                                                                     Container(
                                                                         alignment=ft.alignment.center,
@@ -249,8 +263,21 @@ class ContentBody(Column):
                                                                             weight=FontWeight.W_400,
                                                                             style=TextStyle(
                                                                                 letter_spacing=-0.5
-                                                                            )
-                                                                        )
+                                                                            ),
+                                                                        ),
+                                                                        on_click=lambda
+                                                                            e: self.social_media_button_clicked(e),
+                                                                        on_hover=lambda
+                                                                            e: self.social_media_g1_hover(e),
+                                                                        scale=1,
+                                                                        animate=ft.animation.Animation(
+                                                                            duration=200,
+                                                                            curve=ft.AnimationCurve.EASE_IN
+                                                                        ),
+                                                                        animate_scale=ft.animation.Animation(
+                                                                            duration=200,
+                                                                            curve=ft.AnimationCurve.EASE_IN
+                                                                        ),
                                                                     ),
                                                                 ]
                                                             ),
@@ -272,7 +299,20 @@ class ContentBody(Column):
                                                                             style=TextStyle(
                                                                                 letter_spacing=-0.5
                                                                             )
-                                                                        )
+                                                                        ),
+                                                                        on_click=lambda
+                                                                            e: self.social_media_button_clicked(e),
+                                                                        on_hover=lambda
+                                                                            e: self.social_media_g1_hover(e),
+                                                                        scale=1,
+                                                                        animate=ft.animation.Animation(
+                                                                            duration=200,
+                                                                            curve=ft.AnimationCurve.EASE_IN
+                                                                        ),
+                                                                        animate_scale=ft.animation.Animation(
+                                                                            duration=200,
+                                                                            curve=ft.AnimationCurve.EASE_IN
+                                                                        ),
                                                                     ),
                                                                     Container(
                                                                         bgcolor=cream,
@@ -286,7 +326,20 @@ class ContentBody(Column):
                                                                             style=TextStyle(
                                                                                 letter_spacing=-0.5
                                                                             )
-                                                                        )
+                                                                        ),
+                                                                        on_click=lambda
+                                                                            e: self.social_media_button_clicked(e),
+                                                                        on_hover=lambda
+                                                                            e: self.social_media_g2_hover(e),
+                                                                        scale=1,
+                                                                        animate=ft.animation.Animation(
+                                                                            duration=200,
+                                                                            curve=ft.AnimationCurve.EASE_IN
+                                                                        ),
+                                                                        animate_scale=ft.animation.Animation(
+                                                                            duration=200,
+                                                                            curve=ft.AnimationCurve.EASE_IN
+                                                                        ),
                                                                     ),
                                                                 ]
                                                             ),
@@ -331,6 +384,22 @@ class ContentBody(Column):
                 )
             ),
         ]
+
+
+    def social_media_g1_hover(self, e: ft.ControlEvent) -> None:
+        e.control.bgcolor = "#3E3E3E" if e.control.bgcolor is None else None
+        e.control.scale = 1.1 if e.control.scale == 1 else 1
+        self.update()
+
+    def social_media_g2_hover(self, e: ft.ControlEvent) -> None:
+        e.control.bgcolor = "#3E3E3E" if e.control.bgcolor == cream else cream
+        e.control.scale = 1.1 if e.control.scale == 1 else 1
+        e.control.content.color = cream if e.control.content.color == "#161617" else "#161617"
+        self.update()
+
+
+    def social_media_button_clicked(self, e: ft.ControlEvent) -> None:
+        print(f"<{e.control.content.value}> link clicked...")
 
 
 class BottomNavBar(Column):
