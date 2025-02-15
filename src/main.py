@@ -379,10 +379,14 @@ class ContentBody(Column):
         button_text: str = e.control.content.value
         if button_text == "Pinterest":
             self.main_page.launch_url("https://www.pinterest.com/ObjectZero/")
-        elif button_text == "Instagram":
+        if button_text == "Instagram":
             self.main_page.launch_url("https://www.instagram.com/_objectzero_/")
-        else:
-            print(f"<{button_text}> link clicked...")
+        if button_text == "WhatsApp":
+            self.main_page.launch_url("https://wa.me/+233505767395")
+        if button_text == "Email":
+            self.main_page.launch_url(
+                "https://mail.google.com/mail/?view=cm&fs=1&to=nessahjefferson7@gmail.com"
+            )
 
 
 class BottomNavBar(Column):
@@ -392,7 +396,7 @@ class BottomNavBar(Column):
         self.controls = [
             Container(
                 bgcolor=white,
-                height=300,
+                height=220,
                 alignment=ft.alignment.center,
                 content=Column(
                     alignment=MainAxisAlignment.CENTER,
