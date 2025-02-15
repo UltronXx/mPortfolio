@@ -49,8 +49,9 @@ class NavBar(Column):
 
 
 class ContentBody(Column):
-    def __init__(self):
+    def __init__(self, main_page: Page):
         super().__init__()
+        self.main_page = main_page
 
         self.width = 780
 
@@ -374,9 +375,14 @@ class ContentBody(Column):
         e.control.content.color = cream if e.control.content.color == "#161617" else "#161617"
         self.update()
 
-
     def social_media_button_clicked(self, e: ft.ControlEvent) -> None:
-        print(f"<{e.control.content.value}> link clicked...")
+        button_text: str = e.control.content.value
+        if button_text == "Pinterest":
+            self.main_page.launch_url("https://www.pinterest.com/ObjectZero/")
+        elif button_text == "Instagram":
+            self.main_page.launch_url("https://www.instagram.com/_objectzero_/")
+        else:
+            print(f"<{button_text}> link clicked...")
 
 
 class BottomNavBar(Column):
@@ -429,7 +435,7 @@ def main(page: Page) -> None:
 
     page.add(
         NavBar(),
-        ContentBody(),
+        ContentBody(page),
         BottomNavBar()
     )
     page.update()
