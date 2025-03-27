@@ -447,4 +447,4 @@ def main(page: Page) -> None:
 
 # Run app
 if __name__ == '__main__':
-    app(target=main, assets_dir=assets)
+    app(target=main, view=ft.AppView.FLET_APP_WEB, assets_dir=assets)
